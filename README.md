@@ -107,7 +107,9 @@ $ curl -s localhost:9393
 ==============================================================================
 
 PART II:
+
 1. Delete any containers running from the last part.
+   
    docker stop f65de0f53572
 
    docker rm f65de0f53572
@@ -126,6 +128,7 @@ PART II:
           - CSVSERVER_BORDER=Orange
           
 3.One should be able to run the application with docker-compose up.
+    
     docker-compose up -d
     
     Starting visha_csvserver_1 ...
@@ -135,6 +138,9 @@ PART II:
     docker ps
     
 162439a77404   infracloudio/csvserver:latest   "/csvserver/csvserver"   4 minutes ago   Up 3 minutes   0.0.0.0:9393->9300/tcp   visha_csvserver_1
+
+![image](https://user-images.githubusercontent.com/58246130/190676868-d38a9d45-4c1d-402f-bd9a-18d35b8a9fad.png)
+
 
 
 $ curl -s localhost:9393
