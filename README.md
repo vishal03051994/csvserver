@@ -40,8 +40,6 @@ chmod +r inputFile
 
 C:\Users\visha>docker ps
 
-CONTAINER ID   IMAGE    
-                       COMMAND                  CREATED          STATUS          PORTS      NAMES
 f60bde174def   infracloudio/csvserver:latest   "/csvserver/csvserver"   16 seconds ago   Up 12 seconds   9300/tcp   bold_mcnulty
 
 
@@ -75,7 +73,9 @@ sh-4.4# netstat -anp | grep "9300"
 tcp6       0      0 :::9300                 :::*                    LISTEN      1/csvserver
 
 Stopping and Deleting container
+
  docker stop f60bde174def
+ 
  docker rm f60bde174def
 
 
