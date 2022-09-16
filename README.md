@@ -8,6 +8,7 @@ docker run -d infracloudio/csvserver:latest
 2) If it's failing then try to find the reason, once you find the reason, move to the next step.
 
 $ docker ps -a
+
 CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS                      PORTS     NAMES
 248ad28906d7   infracloudio/csvserver:latest   "/csvserver/csvserver"   59 seconds ago   Exited (1) 58 seconds ago             peaceful_williams
 
