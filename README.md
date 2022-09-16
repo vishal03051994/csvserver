@@ -45,9 +45,13 @@ f60bde174def   infracloudio/csvserver:latest   "/csvserver/csvserver"   16 secon
 
 
 sh-4.4# pwd
+
 /csvserver
+
 sh-4.4# ls
+
 csvserver  inputdata
+
 sh-4.4# cat inputdata
 
 0, 4596
