@@ -1,0 +1,6 @@
+$ docker logs f65de0f53572
+2022/09/16 14:03:02 listening on ****
+2022/09/16 14:03:45 wrote 653 bytes for /
+2022/09/16 14:03:46 wrote 653 bytes for /favicon.ico
+2022/09/16 14:04:20 wrote 653 bytes for /
+2022/09/16 14:04:27 wrote 653 bytes for /
