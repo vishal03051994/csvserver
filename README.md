@@ -10,6 +10,7 @@ docker run -d infracloudio/csvserver:latest
 $ docker ps -a
 
 CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS                      PORTS     NAMES
+
 248ad28906d7   infracloudio/csvserver:latest   "/csvserver/csvserver"   59 seconds ago   Exited (1) 58 seconds ago             peaceful_williams
 
 $ docker logs 248ad28906d7
