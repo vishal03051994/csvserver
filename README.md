@@ -104,4 +104,45 @@ $ curl -s localhost:9393
 <!-- Y3N2c2VydmVyIGdlbmVyYXRlZCBhdDogMTY2MzMzNjk4Mg== -->
 <h3 style="border:3px solid Orange">Welcome to the CSV Server</h3><table><tr><th>Index</th><th>Value</th></tr><tr><td>0</td><td> 4596</td></tr><tr><td>1</td><td> 24200</td></tr><tr><td>2</td><td> 15364</td></tr><tr><td>3</td><td> 20988</td></tr><tr><td>4</td><td> 3166</td></tr><tr><td>5</td><td> 9742</td></tr><tr><td>6</td><td> 32268</td></tr><tr><td>7</td><td> 28539</td></tr><tr><td>8</td><td> 3255</td></tr><tr><td>9</td><td> 28560</td></tr></table></body></html>
 
+==============================================================================
 
+PART II:
+1. Delete any containers running from the last part.
+    docker rmi infracloudio/csvserver:latest
+    
+2. Create a docker-compose.yaml file for the setup from part I.
+    version: "3.9"
+    services:
+      csvserver:
+        hostname: csvserver
+        image: infracloudio/csvserver:latest
+        ports:
+          - "9393:9300"
+        volumes:
+          - ./inputFile:/csvserver/inputdata
+        environment:
+          - CSVSERVER_BORDER=Orange
+          
+3.One should be able to run the application with docker-compose up.
+    docker-compose up -d
+    Starting visha_csvserver_1 ...
+   Starting visha_csvserver_1 ... done
+
+    docker ps
+162439a77404   infracloudio/csvserver:latest   "/csvserver/csvserver"   4 minutes ago   Up 3 minutes   0.0.0.0:9393->9300/tcp   visha_csvserver_1
+
+
+$ curl -s localhost:9393
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV Server</title>
+  <style>
+  th, td {
+    padding: 5px;
+  }
+  </style>
+</head>
+<body>
+<!-- Y3N2c2VydmVyIGdlbmVyYXRlZCBhdDogMTY2MzMzODc0OA== -->
+<h3 style="border:3px solid Orange">Welcome to the CSV Server</h3><table><tr><th>Index</th><th>Value</th></tr><tr><td>0</td><td> 4596</td></tr><tr><td>1</td><td> 24200</td></tr><tr><td>2</td><td> 15364</td></tr><tr><td>3</td><td> 20988</td></tr><tr><td>4</td><td> 3166</td></tr><tr><td>5</td><td> 9742</td></tr><tr><td>6</td><td> 32268</td></tr><tr><td>7</td><td> 28539</td></tr><tr><td>8</td><td> 3255</td></tr><tr><td>9</td><td> 28560</td></tr></table></body></html>
