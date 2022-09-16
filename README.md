@@ -49,15 +49,25 @@ sh-4.4# ls
 csvserver  inputdata
 sh-4.4# cat inputdata
 0, 4596
+
 1, 24200
+
 2, 15364
+
 3, 20988
+
 4, 3166
+
 5, 9742
+
 6, 32268
+
 7, 28539
+
 8, 3255
+
 9, 28560
+
 sh-4.4#
 
 5) Get shell access to the container and find the port on which the application is listening. Once done, stop / delete the running container.
