@@ -1,4 +1,5 @@
 Solution Is Below
+
 Part I
 
 1) Run the container image infracloudio/csvserver:latest in background and check if it's running.
@@ -48,6 +49,7 @@ sh-4.4# pwd
 sh-4.4# ls
 csvserver  inputdata
 sh-4.4# cat inputdata
+
 0, 4596
 
 1, 24200
