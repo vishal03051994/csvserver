@@ -14,6 +14,7 @@ CONTAINER ID   IMAGE                           COMMAND                  CREATED 
 248ad28906d7   infracloudio/csvserver:latest   "/csvserver/csvserver"   59 seconds ago   Exited (1) 58 seconds ago             peaceful_williams
 
 $ docker logs 248ad28906d7
+
 2022/09/16 13:22:52 error while reading the file "/csvserver/inputdata": open /csvserver/inputdata: no such file or directory
 
 
@@ -38,7 +39,9 @@ chmod +r inputFile
      docker run -d -v /c/Users/visha/inputFile:/csvserver/inputdata infracloudio/csvserver:latest
 
 C:\Users\visha>docker ps
-CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS          PORTS      NAMES
+
+CONTAINER ID   IMAGE    
+                       COMMAND                  CREATED          STATUS          PORTS      NAMES
 f60bde174def   infracloudio/csvserver:latest   "/csvserver/csvserver"   16 seconds ago   Up 12 seconds   9300/tcp   bold_mcnulty
 
 
@@ -81,6 +84,7 @@ The application is accessible on the host at http://localhost:9393
 Set the environment variable CSVSERVER_BORDER to have value Orange.
 
 docker run -d -p 9393:9300 -e CSVSERVER_BORDER=Orange -v /c/Users/visha/inputFile:/csvserver/inputdata infracloudio/csvserver:latest
+
 f65de0f535724f96c3ed433a6d9dd98b5145087719e2633052dc9ed9cb8c3010
 
 ![image](https://user-images.githubusercontent.com/58246130/190657656-14ce4633-2092-43a0-8468-95168faff6f0.png)
