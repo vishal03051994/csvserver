@@ -108,7 +108,9 @@ $ curl -s localhost:9393
 
 PART II:
 1. Delete any containers running from the last part.
-    docker rmi infracloudio/csvserver:latest
+   docker stop f65de0f53572
+
+   docker rm f65de0f53572
     
 2. Create a docker-compose.yaml file for the setup from part I.
     version: "3.9"
