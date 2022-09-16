@@ -86,6 +86,7 @@ sh-4.4#
 
 
 sh-4.4# netstat -anp | grep "9300"
+
 tcp6       0      0 :::9300                 :::*                    LISTEN      1/csvserver
 
 Stopping and Deleting container
