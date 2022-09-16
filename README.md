@@ -125,10 +125,13 @@ PART II:
           
 3.One should be able to run the application with docker-compose up.
     docker-compose up -d
+    
     Starting visha_csvserver_1 ...
-   Starting visha_csvserver_1 ... done
+    
+    Starting visha_csvserver_1 ... done
 
     docker ps
+    
 162439a77404   infracloudio/csvserver:latest   "/csvserver/csvserver"   4 minutes ago   Up 3 minutes   0.0.0.0:9393->9300/tcp   visha_csvserver_1
 
 
