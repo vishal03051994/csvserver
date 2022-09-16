@@ -151,3 +151,53 @@ $ curl -s localhost:9393
 <body>
 <!-- Y3N2c2VydmVyIGdlbmVyYXRlZCBhdDogMTY2MzMzODc0OA== -->
 <h3 style="border:3px solid Orange">Welcome to the CSV Server</h3><table><tr><th>Index</th><th>Value</th></tr><tr><td>0</td><td> 4596</td></tr><tr><td>1</td><td> 24200</td></tr><tr><td>2</td><td> 15364</td></tr><tr><td>3</td><td> 20988</td></tr><tr><td>4</td><td> 3166</td></tr><tr><td>5</td><td> 9742</td></tr><tr><td>6</td><td> 32268</td></tr><tr><td>7</td><td> 28539</td></tr><tr><td>8</td><td> 3255</td></tr><tr><td>9</td><td> 28560</td></tr></table></body></html>
+==============================================================================================================
+
+Part III
+
+0. Delete any containers running from the last part.
+
+docker stop 162439a77404
+
+docker rm 162439a77404
+
+1. Add Prometheus container (prom/prometheus:v2.22.0) to the docker-compose.yaml form part II.
+
+     version: "3.9"
+     services:
+       csvserver:
+         hostname: csvserver
+         image: infracloudio/csvserver:latest
+         ports:
+           - "9393:9300"
+         volumes:
+           - ./inputFile:/csvserver/inputdata
+         environment:
+           - CSVSERVER_BORDER=Orange
+      
+       prometheus:
+         hostname: prometheus
+         image: prom/prometheus:v2.22.0
+         ports:
+           - "9090:9090"
+         volumes:
+           - ./prometheus:/etc/prometheus/
+         command:
+            - '--web.enable-lifecycle'
+            - '--config.file=/etc/prometheus/prometheus.yaml'  
+
+2. Configure Prometheus to collect data from our application at <application>:<port>/metrics endpoint. (Where the <port> is the port from I.5)
+
+   ## Created prometheus/prometheus.yml
+      global:
+        scrape_interval: 30s
+        scrape_timeout: 10s
+
+      scrape_configs:
+        - job_name: csvserver
+        metrics_path: /metrics
+        static_configs:
+        - targets:
+            - 'prometheus:9090'
+            - 'csvserver:9300'
+
