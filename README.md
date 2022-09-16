@@ -189,3 +189,14 @@ docker rm 162439a77404
 2. Configure Prometheus to collect data from our application at <application>:<port>/metrics endpoint. (Where the <port> is the port from I.5)
 
 ![image](https://user-images.githubusercontent.com/58246130/190675129-6f271713-0ff8-4363-9556-6ff80c603203.png)
+
+
+3.Make sure that Prometheus is accessible at http://localhost:9090 on the host.
+
+  ![image](https://user-images.githubusercontent.com/58246130/190675497-70336210-cc7e-4dd2-9b28-2a5e53a81909.png)
+
+4. Type csvserver_records in the query box of Prometheus. Click on Execute and then switch to the Graph tab.
+
+![image](https://user-images.githubusercontent.com/58246130/190675928-4ac16580-0f8d-4f7f-a2de-c41dc0b7b343.png)
+
+![image](https://user-images.githubusercontent.com/58246130/190676014-18798642-ad01-47e8-b315-006477af5411.png)
