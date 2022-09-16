@@ -215,4 +215,3 @@ scrape_configs:
 
     static_configs:
       - targets: ['csvserver:9300']
-
